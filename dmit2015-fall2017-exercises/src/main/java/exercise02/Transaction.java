@@ -3,6 +3,11 @@ package exercise02;
 import java.util.Date;
 
 public class Transaction {
+	@Override
+	public String toString() {
+		return "\nTransaction [date=" + date + ", type=" + type + ", amount=" + amount + ", balance=" + balance
+				+ ", description=" + description + "]";
+	}
 	
 	private Date date = new Date(); //getter/setter
 	private char type;				//getter/setter
@@ -32,6 +37,7 @@ public class Transaction {
 	public double getBalance() {
 		return balance;
 	}
+	
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}

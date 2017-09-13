@@ -5,6 +5,13 @@ import java.util.Date;
 
 public class Account {
 	
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", balance=" + balance + ", annualInterestRate=" + annualInterestRate
+				+ ", dateCreated=" + dateCreated + ", name=" + name + ", transactions=" + transactions
+				+ ", getMonthlyInterestRate()=" + getMonthlyInterestRate() + "]";
+	}
+
 	private int id; 						//getter/setter
 	private double balance; 				//getter/setter
 	private double annualInterestRate; 		//getter/setter
