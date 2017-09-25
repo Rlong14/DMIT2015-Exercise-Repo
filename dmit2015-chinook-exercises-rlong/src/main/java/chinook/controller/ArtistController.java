@@ -25,4 +25,8 @@ public class ArtistController {
 			//return artists;
 			return artistRepository.findAll();
 		}
+		
+		public List<Artist> retrieveAllArtists(){
+			return artistRepository.findAll();
+		}
 }

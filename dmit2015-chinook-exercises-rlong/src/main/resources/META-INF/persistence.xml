@@ -27,6 +27,15 @@
          can find it in the source at src/main/webapp/WEB-INF/dmit2015-chinook-exercises-rlong-ds.xml -->
       <jta-data-source>java:jboss/datasources/dmit2015-chinook-exercises-rlongDS</jta-data-source>
       <class>chinook.model.Artist</class>
+      <class>chinook.model.Album</class>
+      <class>chinook.model.Customer</class>
+      <class>chinook.model.Employee</class>
+      <class>chinook.model.Genre</class>
+      <class>chinook.model.Invoice</class>
+      <class>chinook.model.InvoiceLine</class>
+      <class>chinook.model.MediaType</class>
+      <class>chinook.model.Playlist</class>
+      <class>chinook.model.Track</class>
       <properties>
          <!-- Properties for Hibernate -->
 <!--          <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->

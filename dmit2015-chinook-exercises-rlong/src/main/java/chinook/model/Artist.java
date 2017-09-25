@@ -2,6 +2,7 @@ package chinook.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -11,19 +12,19 @@ import javax.persistence.*;
 @Entity
 @NamedQuery(name="Artist.findAll", query="SELECT a FROM Artist a")
 public class Artist implements Serializable {
-	@Override
-	public String toString() {
-		return "Artist [artistId=" + artistId + ", name=" + name + "]";
-	}
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ArtistId")
 	private int artistId;
 
 	@Column(name="Name")
 	private String name;
+
+	//bi-directional many-to-one association to Album
+	@OneToMany(mappedBy="artist")
+	private List<Album> albums;
 
 	public Artist() {
 	}
@@ -42,6 +43,28 @@ public class Artist implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Album> getAlbums() {
+		return this.albums;
+	}
+
+	public void setAlbums(List<Album> albums) {
+		this.albums = albums;
+	}
+
+	public Album addAlbum(Album album) {
+		getAlbums().add(album);
+		album.setArtist(this);
+
+		return album;
+	}
+
+	public Album removeAlbum(Album album) {
+		getAlbums().remove(album);
+		album.setArtist(null);
+
+		return album;
 	}
 
 }
